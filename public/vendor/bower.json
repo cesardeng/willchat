@@ -16,6 +16,7 @@
   ],
   "dependencies": {
     "vue": "^1.0.24",
-    "layer": "*"
+    "layer": "*",
+    "amazeui": "^2.7.0"
   }
 }
