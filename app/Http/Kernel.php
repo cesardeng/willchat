@@ -45,10 +45,12 @@ class Kernel extends HttpKernel
      */
     protected $routeMiddleware = [
         'auth'       => \App\Http\Middleware\Authenticate::class,
-        'auth.user'  => \App\Http\Middleware\UserAuthenticate::class,  // user 模块用户认证
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'guest'      => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'throttle'   => \Illuminate\Routing\Middleware\ThrottleRequests::class,
-        'account'    => \App\Http\Middleware\Account::class,  // 公众号选择验证
+
+        'auth.user'  => \App\Http\Middleware\AuthenticateUser::class, // user 模块用户认证
+
+        'account'    => \App\Http\Middleware\Account::class, // 公众号选择验证
     ];
 }

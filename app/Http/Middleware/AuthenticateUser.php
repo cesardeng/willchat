@@ -5,8 +5,10 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Support\Facades\Auth;
 
-class UserAuthenticate
+class AuthenticateUser
 {
+    use shouldPassThroughTrait;
+
     /**
      * @var array
      */
@@ -41,27 +43,5 @@ class UserAuthenticate
         }
 
         return $next($request);
-    }
-
-    /**
-     * Determine if the request has a URI that should pass through CSRF verification.
-     *
-     * @param \Illuminate\Http\Request $request
-     *
-     * @return bool
-     */
-    protected function shouldPassThrough($request)
-    {
-        foreach ($this->except as $except) {
-            if ($except !== '/') {
-                $except = trim($except, '/');
-            }
-
-            if ($request->is($except)) {
-                return true;
-            }
-        }
-
-        return false;
     }
 }
