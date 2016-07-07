@@ -20,13 +20,14 @@
 </div>
 <div class="am-g">
   <div class="am-u-lg-4 am-u-md-8 am-u-sm-centered">
-    <form action="" method="post" id="login-form" class="am-form">
-      <input class="form-control" type="email" name="" id="email" value="" placeholder="用户名">
-      <input class="form-control" type="password" name="" id="password" value="" placeholder="密码">
+    <form action="/user/login" method="post" id="login-form" class="am-form">
+      {!! csrf_field() !!}
+      <input class="form-control" type="text" name="name" id="name" value="" placeholder="用户名">
+      <input class="form-control" type="password" name="password" id="password" value="" placeholder="密码">
 
       <div class="am-cf">
         <input type="submit" name="" value="登 录" class="am-btn am-btn-primary am-btn-sm am-fl">
-        <input type="submit" name="" value="忘记密码 ^_^? " class="am-btn am-btn-default am-btn-sm am-fr">
+        <a href="" class="am-btn am-btn-default am-btn-sm am-fl">忘记密码？</a>
       </div>
     </form>
     <hr>
