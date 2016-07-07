@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers\User;
 
-use App\Http\Controllers\Controller;
 use App\Repositories\UserRepository;
 use Auth;
 use Illuminate\Http\Request;
 use Image;
 
-class AvatarController extends Controller
+class AvatarController extends UserController
 {
     /**
      * @var UserRepository
@@ -22,6 +21,8 @@ class AvatarController extends Controller
      */
     public function __construct(UserRepository $userRepository)
     {
+        parent::__construct();
+
         $this->userRepository = $userRepository;
     }
 

@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers\User;
 
-use App\Http\Controllers\Controller;
 
-class BroadcastNewsController extends Controller
+class BroadcastNewsController extends UserController
 {
     public function getIndex()
     {

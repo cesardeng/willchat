@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>WillChat</title>
-  <meta name="description" content="这是一个 index 页面">
-  <meta name="keywords" content="index">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="renderer" content="webkit">
   <meta http-equiv="Cache-Control" content="no-siteapp" />
@@ -20,7 +20,6 @@
 <p class="browsehappy">你正在使用<strong>过时</strong>的浏览器，Amaze UI 暂不支持。 请 <a href="http://browsehappy.com/" target="_blank">升级浏览器</a>
   以获得更好的体验！</p>
 <![endif]-->
-
 <header class="am-topbar am-topbar-inverse admin-header">
   <div class="am-topbar-brand">
     <strong>Amaze UI</strong> <small>后台管理模板</small>
@@ -34,7 +33,7 @@
       <li><a href="javascript:;"><span class="am-icon-envelope-o"></span> 收件箱 <span class="am-badge am-badge-warning">5</span></a></li>
       <li class="am-dropdown" data-am-dropdown>
         <a class="am-dropdown-toggle" data-am-dropdown-toggle href="javascript:;">
-          <span class="am-icon-users"></span> 管理员 <span class="am-icon-caret-down"></span>
+          <span class="am-icon-users"></span> {{ $user->name }} <span class="am-icon-caret-down"></span>
         </a>
         <ul class="am-dropdown-content">
           <li><a href="#"><span class="am-icon-user"></span> 资料</a></li>
