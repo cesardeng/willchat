@@ -21,7 +21,7 @@ class AccountController extends UserController
     public function __construct(AccountRepository $account)
     {
         parent::__construct();
-        
+
         $this->accountRepository = $account;
     }
 

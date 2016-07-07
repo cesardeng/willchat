@@ -16,7 +16,6 @@ class ProfileController extends UserController
     public function __construct()
     {
         parent::__construct();
-
     }
 
     /**
