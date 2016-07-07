@@ -110,7 +110,7 @@ class AuthController extends Controller
     public function authenticated(Request $request, User $user)
     {
         // 最后登录时间和IP
-        $user->last_login_at = \Carbon\Carbon::create();
+        $user->last_login_at = \Carbon\Carbon::now();
         $user->last_login_ip = $request->getClientIp();
         $user->save();
 
