@@ -9,12 +9,14 @@ class IndexController extends Controller
 {
     public function getIndex()
     {
-        $easywechat = new Application([]);
+        $easywechat = new Application(get_wechat_options(16));
 
 
         $card = $easywechat->card;
 
-        dump($card);
+        $res = $card->lists();
+
+        dump($res);
 
         exit;
 
