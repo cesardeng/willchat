@@ -53,8 +53,8 @@ class Kernel extends HttpKernel
 
         'account'    => \App\Http\Middleware\Account::class, // 公众号选择验证
 
-        'role' => \Zizaco\Entrust\Middleware\EntrustRole::class,
+        'role'       => \Zizaco\Entrust\Middleware\EntrustRole::class,
         'permission' => \Zizaco\Entrust\Middleware\EntrustPermission::class,
-        'ability' => \Zizaco\Entrust\Middleware\EntrustAbility::class,
+        'ability'    => \Zizaco\Entrust\Middleware\EntrustAbility::class,
     ];
 }

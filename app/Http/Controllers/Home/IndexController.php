@@ -7,7 +7,6 @@ use EasyWeChat\Foundation\Application;
 
 class IndexController extends Controller
 {
-
     public function getIndex()
     {
         $easywechat = new Application([]);
