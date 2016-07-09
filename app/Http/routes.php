@@ -162,3 +162,5 @@ Route::get('open-oauth-callback', 'OpenAuthController@openOauthCallback');
 
 // 开放平台接口调用测试
 Route::get('open-test', 'OpenTestController@getIndex');
+
+Route::get('test', 'Home\IndexController@getIndex');
