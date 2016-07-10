@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Home;
 
 use App\Http\Controllers\Controller;
+use EasyWeChat\Card\Cards\Groupon;
 use EasyWeChat\Foundation\Application;
 
 class IndexController extends Controller
@@ -12,9 +13,11 @@ class IndexController extends Controller
         $easywechat = new Application(get_wechat_options(16));
 
 
+        $ccc = new Groupon();
+
         $card = $easywechat->card;
 
-        $res = $card->lists();
+        $res = $card->create($ccc);
 
         dump($res);
 
