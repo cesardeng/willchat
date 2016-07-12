@@ -14,9 +14,9 @@ WillChat 是一套简单的微信管理系统。
 
 - 安装 composer
 
-- MySQL 或 MariaDB，并设置默认存储引擎为 InnoDB。
+- MySQL 或 MariaDB，并设置默认存储引擎为 InnoDB
 
-- GD 或 Imagick 扩展。
+- GD 或 Imagick 扩展
 
 ### 安装
 
@@ -32,13 +32,13 @@ WillChat 是一套简单的微信管理系统。
 
 4. 复制根目录下 .env.example 文件为 .env
 
-5. 生成APP_KEY
+5. 生成 APP_KEY
 
     ```shell
     php artisan key:generate
     ```
 
-6. 创建数据库并在.env 文件中配置数据库、邮件等相关参数
+6. 创建数据库并在 .env 文件中配置数据库、邮件等相关参数
 
 7. 生成数据表
 
@@ -75,5 +75,3 @@ WillChat 是一套简单的微信管理系统。
 ### License
 
 本项目遵循 MIT 开源协议。
-
-**但由于项目中前端模板使用了商业授权模板框架 [Motronic](http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?s_rank=1)，若您将本项目用于商业用途，需要自行购买相应的授权。请支持正版，谢谢！**
