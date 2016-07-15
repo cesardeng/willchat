@@ -13,12 +13,13 @@ class IndexController extends Controller
         $easywechat = new Application(get_wechat_options(16));
 
 
-        $ccc = new Groupon();
+        $groupon = new Groupon();
 
         $card = $easywechat->card;
 
-        $res = $card->create($ccc);
+        $res = $card->create($groupon);
 
+        dump($groupon);
         dump($res);
 
         exit;
