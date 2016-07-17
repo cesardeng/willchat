@@ -17,11 +17,11 @@ class IndexController extends Controller
 
         $card = $easywechat->card;
 
+
+        dump($groupon->all());
+        dump($groupon->toJson());
+
         $res = $card->create($groupon);
-
-        dump($groupon);
-        dump($res);
-
         exit;
 
 
