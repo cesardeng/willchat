@@ -1,4 +1,4 @@
-@extends('user.layouts.baseindex')
+@extends('user.layouts.base')
 @section('main')
   <div class="row">
     <div class="col-md-12">
