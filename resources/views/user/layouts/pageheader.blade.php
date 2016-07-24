@@ -1,23 +1,67 @@
-<header class="am-topbar am-topbar-inverse admin-header" id="page-header">
-  <a class="am-topbar-brand" href="{{ user_url('/') }}">
-    <img src="{{ img('user/logo.png') }}" alt="" class="logo" />
+<header class="main-header">
+  <!-- Logo -->
+  <a href="{{ user_url('/') }}" class="logo">
+    <!-- mini logo for sidebar mini 50x50 pixels -->
+    <span class="logo-mini">WillChat</span>
+    <!-- logo for regular state and mobile devices -->
+    <span class="logo-lg">WillChat</span>
   </a>
+  <!-- Header Navbar: style can be found in header.less -->
+  <nav class="navbar navbar-static-top">
+    <!-- Sidebar toggle button-->
+    <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+      <span class="sr-only">Toggle navigation</span>
+    </a>
 
-  <button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-success am-show-sm-only" data-am-collapse="{target: '#topbar-collapse'}"><span class="am-sr-only">导航切换</span> <span class="am-icon-bars"></span></button>
+    <div class="navbar-custom-menu">
+      <ul class="nav navbar-nav">
 
-  <div class="am-collapse am-topbar-collapse" id="topbar-collapse">
-    <ul class="am-nav am-nav-pills am-topbar-nav am-topbar-right admin-header-list">
-      <li class="am-dropdown" data-am-dropdown>
-        <a class="am-dropdown-toggle" data-am-dropdown-toggle href="javascript:;">
-          <img src="{{ $user->avatar }}" alt="" class="am-circle header-avatar" /> <span class="username">{{ $user->name }}</span><span class="am-icon-caret-down"></span>
-        </a>
-        <ul class="am-dropdown-content">
-          <li><a href="{{ user_url('progile') }}"><span class="am-icon-user"></span> 个人资料</a></li>
-          <li><a href="{{ user_url('lock') }}"><span class="am-icon-lock"></span> 锁屏</a></li>
-          <li><a href="{{ user_url('logout') }}"><span class="am-icon-power-off"></span> 退出</a></li>
-        </ul>
-      </li>
-      <li class="am-hide-sm-only"><a href="javascript:;" id="admin-fullscreen"><span class="am-icon-arrows-alt"></span> <span class="admin-fullText">全屏</span></a></li>
-    </ul>
-  </div>
+        <!-- User Account: style can be found in dropdown.less -->
+        <li class="dropdown user user-menu">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <img src="{{ $user->avatar }}" class="user-image" alt="User Image">
+            <span class="hidden-xs">{{ $user->name }}</span>
+          </a>
+          <ul class="dropdown-menu">
+            <!-- User image -->
+            <li class="user-header">
+              <img src="{{ $user->avatar }}" class="img-circle" alt="User Image">
+              <p>
+                Alexander Pierce - Web Developer
+                <small>Member since Nov. 2012</small>
+              </p>
+            </li>
+            <!-- Menu Body -->
+            <li class="user-body">
+              <div class="row">
+                <div class="col-xs-4 text-center">
+                  <a href="#">Followers</a>
+                </div>
+                <div class="col-xs-4 text-center">
+                  <a href="#">Sales</a>
+                </div>
+                <div class="col-xs-4 text-center">
+                  <a href="#">Friends</a>
+                </div>
+              </div>
+              <!-- /.row -->
+            </li>
+            <!-- Menu Footer-->
+            <li class="user-footer">
+              <div class="pull-left">
+                <a href="{{ user_url('progile') }}" class="btn btn-default btn-flat">个人资料</a>
+              </div>
+              <div class="pull-right">
+                <a href="{{ user_url('logout') }}" class="btn btn-default btn-flat">退出</a>
+              </div>
+            </li>
+          </ul>
+        </li>
+        <!-- Control Sidebar Toggle Button -->
+        {{-- <li>
+          <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+        </li> --}}
+      </ul>
+    </div>
+  </nav>
 </header>
