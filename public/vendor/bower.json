@@ -17,6 +17,7 @@
   "dependencies": {
     "vue": "^1.0.24",
     "layer": "*",
-    "amazeui": "^2.7.0"
+    "amazeui": "^2.7.0",
+    "AdminLTE": "adminlte#^2.3.5"
   }
 }
