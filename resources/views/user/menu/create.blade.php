@@ -26,7 +26,7 @@
         <div class="form-group">
           <label>菜单类型</label>
           <select name="type" id="type" class="form-control">
-            @foreach (getMenuTypes() as $key => $menuType)
+            @foreach (get_ment_types() as $key => $menuType)
               @if (isset($menuData) && $menuType == $menuData->type)
                 <option value="{{ $key }}" selected>{{ $menuType }}</option>
               @else

@@ -15,7 +15,7 @@
 <body>
 <div class="header">
   <div class="am-g">
-    <h1>WillChat</h1>
+    <img src="{{ img('user/logo.png') }}" alt="" class="logo" />
   </div>
 </div>
 <div class="am-g">
