@@ -12,12 +12,28 @@ var elixir = require('laravel-elixir');
  */
 
 elixir(function(mix) {
-    mix.sass('app.scss');
+    // mix.sass('app.scss');
+});
 
-    // vue
-    mix.copy('node_modules/vue/dist', 'public/static/vue');
-    // vux
-    mix.copy('node_modules/vux/components', 'public/static/vux/components');
-    mix.copy('node_modules/vux/vux.js', 'public/static/vux/vux.js');
-    mix.copy('node_modules/vux/vux.css', 'public/static/vux/vux.css');
+var gulp = require('gulp');
+var cssmin = require('gulp-minify-css');
+var rename = require('gulp-rename');
+var uglify = require('gulp-uglify');
+
+gulp.task('minifycss', function(){
+    gulp.src('public/css/user/!(*.min).css')
+        .pipe(cssmin({
+            advanced: false,
+            compatibility: 'ie8',
+            keepBreaks: true
+        }))
+        .pipe(rename({suffix: '.min'}))
+        .pipe(gulp.dest('public/css/user'));
+});
+
+gulp.task('minifyjs', function(){
+    gulp.src('public/js/user/!(*.min).js')
+        .pipe(uglify())
+        .pipe(rename({suffix: '.min'}))
+        .pipe(gulp.dest('public/js/user'));
 });

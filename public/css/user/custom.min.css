@@ -1,0 +1,6 @@
+body{font-family:"Microsoft Yahei"}
+#page-header{background-color:#3333ad}
+#page-header .logo{display:block;float:left;height:25px;margin-top:12px}
+#page-header .header-avatar{display:block;float:left;width:35px;margin-top:7px}
+#page-header .username{display:block;float:left;margin:0 5px}
+#sidebar{width:260px;overflow:auto;float:left}
