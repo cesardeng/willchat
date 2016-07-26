@@ -37,3 +37,6 @@ gulp.task('minifyjs', function(){
         .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest('public/js/user'));
 });
+
+gulp.task('default', ['minifycss', 'minifyjs']);
+
