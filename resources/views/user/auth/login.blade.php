@@ -1,39 +1,89 @@
 <!DOCTYPE html>
 <html>
-<head lang="en">
-  <meta charset="UTF-8">
-  <title>WillChat</title>
+<head>
+  <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="format-detection" content="telephone=no">
-  <meta name="renderer" content="webkit">
-  <meta http-equiv="Cache-Control" content="no-siteapp" />
-  <link rel="alternate icon" type="image/png" href="assets/i/favicon.png">
-  <link rel="stylesheet" href="http://cdn.amazeui.org/amazeui/2.7.0/css/amazeui.min.css"/>
-  <link rel="stylesheet" href="{{ css('user/login.css') }}" />
-</head>
-<body>
-<div class="header">
-  <div class="am-g">
-    <img src="{{ img('user/logo.png') }}" alt="" class="logo" />
-  </div>
-</div>
-<div class="am-g">
-  <div class="am-u-lg-4 am-u-md-8 am-u-sm-centered">
-    <form action="/user/login" method="post" id="login-form" class="am-form">
-      {!! csrf_field() !!}
-      <input class="form-control" type="text" name="name" id="name" value="" placeholder="用户名">
-      <input class="form-control" type="password" name="password" id="password" value="" placeholder="密码">
+  <title>WillChat</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Bootstrap 3.3.6 -->
+  <link rel="stylesheet" href="{{ vendor('bower_components/AdminLTE') }}/bootstrap/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link href="http://cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <!-- Ionicons -->
+  <link href="http://cdn.bootcss.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="{{ vendor('bower_components/AdminLTE') }}/dist/css/AdminLTE.min.css">
+  <!-- iCheck -->
+  <link rel="stylesheet" href="{{ vendor('bower_components/AdminLTE') }}/plugins/iCheck/square/blue.css">
 
-      <div class="am-cf">
-        <input type="submit" name="" value="登 录" class="am-btn am-btn-primary am-btn-sm am-fl">
-        <a href="" class="am-btn am-btn-default am-btn-sm am-fl">忘记密码？</a>
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body class="hold-transition login-page">
+<div class="login-box">
+  <div class="login-logo">
+    <img src="{{ img('user/logo.png') }}" width="320" alt="" />
+  </div>
+  <!-- /.login-logo -->
+  <div class="login-box-body">
+    <p class="login-box-msg">用户登录</p>
+
+    <form action="/user/login" method="post">
+      {!! csrf_field() !!}
+      <div class="form-group has-feedback">
+        <input type="text" class="form-control" name="name" value="{{ old('name') }}" placeholder="账户名">
+        <span class="glyphicon glyphicon-user form-control-feedback"></span>
+      </div>
+      <div class="form-group has-feedback">
+        <input type="password" class="form-control" name="password" placeholder="密码">
+        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+      </div>
+      <div class="row">
+        <div class="col-xs-8">
+          <div class="checkbox icheck">
+            <label>
+              <input type="checkbox"> 记住我
+            </label>
+          </div>
+        </div>
+        <!-- /.col -->
+        <div class="col-xs-4">
+          <button type="submit" class="btn btn-primary btn-block btn-flat">登录</button>
+        </div>
+        <!-- /.col -->
       </div>
     </form>
-    <hr>
-    <div class="copyright"> &copy; 2016 深圳荐货联盟网络科技有限公司 <a target="_blank" href="http://www.miitbeian.gov.cn/">粤ICP备16002610-2号</a> </div>
+
+    <!-- /.social-auth-links -->
+
+    <a href="#">忘记密码</a><br>
+    <a href="/user/register" class="text-center">注册账号</a>
+
   </div>
+  <!-- /.login-box-body -->
 </div>
-<script src="http://cdn.amazeui.org/amazeui/2.7.0/js/amazeui.min.js"></script>
+<!-- /.login-box -->
+
+<!-- jQuery 2.2.3 -->
+<script src="{{ vendor('bower_components/AdminLTE') }}/plugins/jQuery/jquery-2.2.3.min.js"></script>
+<!-- Bootstrap 3.3.6 -->
+<script src="{{ vendor('bower_components/AdminLTE') }}/bootstrap/js/bootstrap.min.js"></script>
+<!-- iCheck -->
+<script src="{{ vendor('bower_components/AdminLTE') }}/plugins/iCheck/icheck.min.js"></script>
+<script>
+  $(function () {
+    $('input').iCheck({
+      checkboxClass: 'icheckbox_square-blue',
+      radioClass: 'iradio_square-blue',
+      increaseArea: '20%' // optional
+    });
+  });
+</script>
 </body>
 </html>
+
