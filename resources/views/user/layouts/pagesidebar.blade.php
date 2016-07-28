@@ -27,7 +27,7 @@
       {{-- <li class="header">MAIN NAVIGATION</li> --}}
       <li class="active treeview">
         <a href="#">
-          <i class="fa fa-dashboard"></i> <span>管理主页</span>
+          <i class="icon-home"></i> <span>管理主页</span>
           <span class="pull-right-container">
             <i class="fa fa-angle-left pull-right"></i>
           </span>
@@ -35,51 +35,50 @@
       </li>
       <li class="treeview">
         <a href="{{ user_url('/') }}">
-          <i class="fa fa-share"></i> <span>基础设置</span>
+          <i class="icon-settings"></i> <span>基础设置</span>
           <span class="pull-right-container">
             <i class="fa fa-angle-left pull-right"></i>
           </span>
         </a>
         <ul class="treeview-menu">
-          <li><a href="#"><i class="fa fa-circle-o"></i>自定义菜单</a></li>
-          <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
+          <li><a href="#"></i>自定义菜单</a></li>
         </ul>
       </li>
       <li class="treeview">
         <a href="#">
-          <i class="fa fa-share"></i> <span>自动回复</span>
+          <i class="icon-speech"></i> <span>自动回复</span>
           <span class="pull-right-container">
             <i class="fa fa-angle-left pull-right"></i>
           </span>
         </a>
         <ul class="treeview-menu">
-          <li><a href={{ user_url('reply/index') }}"><i class="fa fa-circle-o"></i>文本回复</a></li>
-          <li><a href={{ user_url('reply/index') }}"><i class="fa fa-circle-o"></i>图文回复</a></li>
+          <li><a href={{ user_url('reply/index') }}"></i>文本回复</a></li>
+          <li><a href={{ user_url('reply/index') }}"></i>图文回复</a></li>
         </ul>
       </li>
       <li class="treeview">
         <a href="#">
-          <i class="fa fa-share"></i> <span>粉丝管理</span>
+          <i class="icon-users"></i> <span>粉丝管理</span>
           <span class="pull-right-container">
             <i class="fa fa-angle-left pull-right"></i>
           </span>
         </a>
         <ul class="treeview-menu">
-          <li><a href="#"><i class="fa fa-circle-o"></i>粉丝列表</a></li>
-          <li><a href="#"><i class="fa fa-circle-o"></i>粉丝分组</a></li>
+          <li><a href="#"></i>粉丝列表</a></li>
+          <li><a href="#"></i>粉丝分组</a></li>
         </ul>
       </li>
       <li class="treeview">
         <a href="#">
-          <i class="fa fa-share"></i> <span>二维码</span>
+          <i class="icon-frame"></i> <span>二维码</span>
           <span class="pull-right-container">
             <i class="fa fa-angle-left pull-right"></i>
           </span>
         </a>
         <ul class="treeview-menu">
-          <li><a href="#"><i class="fa fa-circle-o"></i>临时二维码</a></li>
-          <li><a href="#"><i class="fa fa-circle-o"></i>永久二维码</a></li>
-          <li><a href="#"><i class="fa fa-circle-o"></i>卡券二维码</a></li>
+          <li><a href="#"></i>临时二维码</a></li>
+          <li><a href="#"></i>永久二维码</a></li>
+          <li><a href="#"></i>卡券二维码</a></li>
         </ul>
       </li>
     </ul>
