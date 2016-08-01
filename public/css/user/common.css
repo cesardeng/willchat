@@ -1,3 +1,29 @@
 body {
 
 }
+
+/* box */
+.box {
+    padding-bottom: 50px;
+}
+.box-header {
+    padding: 15px 10px;
+}
+
+/* sidebar */
+.sidebar-menu i {
+    margin-right: 5px;
+}
+.sidebar-menu .treeview-menu li {
+    padding: 5px 0 5px 15px;
+}
+.sidebar-menu .treeview-menu li:hover {
+    background-color: #33464B;
+}
+.box-header .btn .fa {
+    margin-right: 8px;
+}
+
+.row-nodata {
+    text-align: center;
+}

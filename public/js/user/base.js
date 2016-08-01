@@ -24,6 +24,8 @@ var Base = function() {
             }
         });
     };
+
+    // ajax 提交表单
     var initAjaxForm = function() {
         // 表单默认以AJAX提交并提示处理结果，提升用户体验，如果不要AJAX提交则在form添加no-ajax类
         $("form").not('.validate').submit(function(event) {
@@ -64,6 +66,7 @@ var Base = function() {
             return false;
         });
     };
+
     //图片弹出预览
     var initImgpreview = function() {
         $('img.preview-small,.thumbnail img').click(function(event) {
@@ -80,6 +83,7 @@ var Base = function() {
             });
         });
     };
+
     var initCheckAll = function() {
         //全选的实现
         $(".group-checkable").click(function() {
@@ -100,6 +104,7 @@ var Base = function() {
             });
         });
     };
+
     //ajax get请求
     $('.ajax-get').click(function() {
         var target;
@@ -136,6 +141,7 @@ var Base = function() {
         }
         return false;
     });
+
     //ajax post submit请求
     $('.ajax-post').click(function() {
         var target, query, form;
@@ -210,47 +216,61 @@ var Base = function() {
         }
         return false;
     });
+
     //侧栏高亮,rewrite URL模式匹配
     var highlightSidebar = function() {
-            //侧栏菜单中的全部有链接菜单项
-            var sidebarLinks = $(".page-sidebar-menu .nav-item").find('a');
-            if (sidebarLinks.length > 0) {
-                //当前页面URL
-                var url = document.URL;
-                var activeNavItem = $(".page-sidebar-menu .nav-item").find("a[href='" + url + "']").first();
-                if (activeNavItem) {
-                    //保存当前高亮菜单项 index 到 cookie 中
-                    var menuIndex = activeNavItem.index(sidebarLinks);
-                    Cookies.set('menuindex', menuIndex);
-                    Layout.setSidebarMenuActiveLink('click', activeNavItem);
-                } else {
-                    //侧栏中没有与当前 URL 匹配的，则高亮上一次高亮的项
-                    var menuIndex = Cookies.get('menuindex');
-                    Layout.setSidebarMenuActiveLink('click', sidebarLinks.eq(menuIndex));
-                }
+        //侧栏菜单中的全部有链接菜单项
+        var sidebarLinks = $(".page-sidebar-menu .nav-item").find('a');
+        if (sidebarLinks.length > 0) {
+            //当前页面URL
+            var url = document.URL;
+            var activeNavItem = $(".page-sidebar-menu .nav-item").find("a[href='" + url + "']").first();
+            if (activeNavItem) {
+                //保存当前高亮菜单项 index 到 cookie 中
+                var menuIndex = activeNavItem.index(sidebarLinks);
+                Cookies.set('menuindex', menuIndex);
+                Layout.setSidebarMenuActiveLink('click', activeNavItem);
+            } else {
+                //侧栏中没有与当前 URL 匹配的，则高亮上一次高亮的项
+                var menuIndex = Cookies.get('menuindex');
+                Layout.setSidebarMenuActiveLink('click', sidebarLinks.eq(menuIndex));
             }
         }
+    };
+
     //操作结果提示
     var success = function(msg) {
         top.layer.msg(msg, {
             icon: 1
         });
-    }
+    };
+
     var error = function(msg) {
         top.layer.msg(msg, {
             icon: 2,
             shift: 6
         });
-    }
+    };
+
     var info = function(msg) {
         top.layer.msg(msg);
-    }
+    };
+
     var confirm = function(msg, callback) {
         top.layer.confirm(msg, {icon:3,title:'操作提示'}, function(index){
             callback();
             top.layer.close(index);
         });
-    }
+    };
+
+    var showLoading = function() {
+        Base.loadingIndex = top.layer.load();
+    };
+
+    var hideLoading = function() {
+        top.layer.close(Base.loadingIndex);
+    };
+
     return {
         initNormalPage: function() {
             initConfirmation();
@@ -271,3 +291,11 @@ var Base = function() {
         confirm: confirm
     }
 }();
+
+jQuery(document).ready(function() {
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+});
