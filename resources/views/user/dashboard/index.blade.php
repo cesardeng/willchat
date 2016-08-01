@@ -8,7 +8,7 @@
     <div class="box-header with-border">
       <h3 class="box-title"><span class="fa fa-info"></span> 公众号列表</h3>
       <div class="box-tools pull-right">
-        <a href="{{ user_url('account/create') }}" class="btn btn-primary btn-xs"><i class="fa fa-plus"></i>添加公众号</a>
+        <a href="{{ user_url('account/create') }}" class="btn default blue-stripe btn-sm"><i class="fa fa-plus"></i>添加公众号</a>
       </div>
     </div>
     <div class="box-body table-responsive no-padding">

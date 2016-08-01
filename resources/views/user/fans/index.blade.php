@@ -4,8 +4,8 @@
     <div class="box-header with-border">
       <h3 class="box-title"><span class="fa fa-users"></span> 粉丝列表</h3>
       <div class="box-tools pull-right">
-        <a href="javascript:;" class="btn btn-primary blue-stripe btn-sm" id="sync"><i class="fa fa-refresh"></i>同步粉丝数据</a>
-        <a href="{{ user_url('/') }}" class="btn btn-primary blue-stripe btn-sm dialog-popup" target-form="ids"><i class="fa fa-hand-paper-o"></i>批量移动用户</a>
+        <a href="javascript:;" class="btn default blue-stripe btn-sm" id="sync"><i class="fa fa-refresh"></i>同步粉丝数据</a>
+        <a href="{{ user_url('/') }}" class="btn default blue-stripe btn-sm dialog-popup" target-form="ids"><i class="fa fa-hand-paper-o"></i>批量移动用户</a>
       </div>
     </div>
     <div class="box-body table-responsive no-padding">
