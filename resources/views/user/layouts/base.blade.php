@@ -81,5 +81,11 @@
 <script src="{{ vendor('bower_components/AdminLTE') }}/plugins/fastclick/fastclick.js"></script>
 <!-- AdminLTE App -->
 <script src="{{ vendor('bower_components/AdminLTE') }}/dist/js/app.min.js"></script>
+<script src="{{ js('user/base.min.js') }}"></script>
 </body>
+<script>
+  $(function() {
+    Base.initNormalPage();
+  })
+</script>
 </html>

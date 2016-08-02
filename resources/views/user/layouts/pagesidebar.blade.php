@@ -25,7 +25,7 @@
     <!-- sidebar menu: : style can be found in sidebar.less -->
     <ul class="sidebar-menu">
       {{-- <li class="header">MAIN NAVIGATION</li> --}}
-      <li class="active treeview">
+      <li class="treeview">
         <a href="{{ user_url('/') }}">
           <i class="icon-home"></i> <span>管理主页</span>
         </a>

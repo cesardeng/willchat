@@ -1,30 +1,4 @@
 var Base = function() {
-    var initConfirmation = function() {
-        //数据表格中删除按钮的弹出确认
-        $('.btn-delete-confirm').confirmation({
-            "title": "确定删除？",
-            "singleton": true,
-            "popout": true,
-            "btnOkClass": "btn-xs btn-danger",
-            "btnOkLabel": "是",
-            "btnCancelClass": "btn-xs btn-default",
-            "btnCancelLabel": "否",
-            "onConfirm": function() {
-                var url = $(this).data('link');
-                $.get(url, function(data) {
-                    if (data.status) {
-                        Base.success(data.info);
-                        setTimeout(function() {
-                            location.href = data.url
-                        }, 1000);
-                    } else {
-                        Base.error(data.info);
-                    }
-                }, 'json');
-            }
-        });
-    };
-
     // ajax 提交表单
     var initAjaxForm = function() {
         // 表单默认以AJAX提交并提示处理结果，提升用户体验，如果不要AJAX提交则在form添加no-ajax类
@@ -40,7 +14,7 @@ var Base = function() {
                 var formItem = $('form');
                 // 清除旧的错误提示
                 formItem.find('.alert').remove();
-                Base.success(data.info);
+                this.success(data.info);
                 if (data.url) {
                     setTimeout(function() {
                         top.location.href = data.url
@@ -118,9 +92,9 @@ var Base = function() {
             $.get(target).success(function(data) {
                 if (data.status == 1) {
                     if (data.url) {
-                        Base.success(data.info + ' 页面即将自动跳转~');
+                        this.success(data.info + ' 页面即将自动跳转~');
                     } else {
-                        Base.success(data.info);
+                        this.success(data.info);
                     }
                     setTimeout(function() {
                         if (data.url) {
@@ -130,7 +104,7 @@ var Base = function() {
                         }
                     }, 1500);
                 } else {
-                    Base.error(data.info);
+                    this.error(data.info);
                     setTimeout(function() {
                         if (data.url) {
                             location.href = data.url;
@@ -172,7 +146,7 @@ var Base = function() {
                     if (v.type == 'checkbox' && v.checked == true) {
                         nead_confirm = true;
                     }
-                })
+                });
                 if (nead_confirm && $(this).hasClass('confirm')) {
                     if (!confirm('确认要执行该操作吗?')) {
                         return false;
@@ -191,9 +165,9 @@ var Base = function() {
             $.post(target, query).success(function(data) {
                 if (data.status == 1) {
                     if (data.url) {
-                        Base.success(data.info + ' 页面即将自动跳转~');
+                        this.success(data.info + ' 页面即将自动跳转~');
                     } else {
-                        Base.success(data.info);
+                        this.success(data.info);
                     }
                     setTimeout(function() {
                         $(that).removeClass('disabled').prop('disabled', false);
@@ -204,7 +178,7 @@ var Base = function() {
                         }
                     }, 1500);
                 } else {
-                    Base.error(data.info);
+                    this.error(data.info);
                     setTimeout(function() {
                         $(that).removeClass('disabled').prop('disabled', false);
                         if (data.url) {
@@ -217,34 +191,45 @@ var Base = function() {
         return false;
     });
 
-    //侧栏高亮,rewrite URL模式匹配
+    // 侧栏高亮,rewrite URL模式匹配
     var highlightSidebar = function() {
         //侧栏菜单中的全部有链接菜单项
-        var sidebarLinks = $(".page-sidebar-menu .nav-item").find('a');
+        var sidebarLinks = $(".sidebar-menu").find('.treeview a');
+
         if (sidebarLinks.length > 0) {
             //当前页面URL
             var url = document.URL;
-            var activeNavItem = $(".page-sidebar-menu .nav-item").find("a[href='" + url + "']").first();
-            if (activeNavItem) {
+
+            var activeMenuItem = $(".sidebar-menu .treeview").find("a[href='" + url + "']").first();
+
+            if (activeMenuItem) {
                 //保存当前高亮菜单项 index 到 cookie 中
-                var menuIndex = activeNavItem.index(sidebarLinks);
+                var menuIndex = sidebarLinks.index(activeMenuItem);
+
+                activeMenuItem.parents(".treeview").addClass("active");
+                activeMenuItem.parent('li').addClass("active");
+
                 Cookies.set('menuindex', menuIndex);
-                Layout.setSidebarMenuActiveLink('click', activeNavItem);
             } else {
                 //侧栏中没有与当前 URL 匹配的，则高亮上一次高亮的项
                 var menuIndex = Cookies.get('menuindex');
-                Layout.setSidebarMenuActiveLink('click', sidebarLinks.eq(menuIndex));
+
+                activeMenuItem = sidebarLinks.eq(menuIndex);
+
+                activeMenuItem.parents(".treeview").addClass("active");
+                activeMenuItem.parent('li').addClass("active");
             }
         }
     };
 
-    //操作结果提示
+    // 操作成功提示
     var success = function(msg) {
         top.layer.msg(msg, {
             icon: 1
         });
     };
 
+    // 操作失败提示
     var error = function(msg) {
         top.layer.msg(msg, {
             icon: 2,
@@ -252,10 +237,12 @@ var Base = function() {
         });
     };
 
+    // 一般提示
     var info = function(msg) {
         top.layer.msg(msg);
     };
 
+    // 操作确认弹窗
     var confirm = function(msg, callback) {
         top.layer.confirm(msg, {icon:3,title:'操作提示'}, function(index){
             callback();
@@ -263,32 +250,33 @@ var Base = function() {
         });
     };
 
+    // 显示 loading 提示层
     var showLoading = function() {
-        Base.loadingIndex = top.layer.load();
+        this.loadingIndex = top.layer.load();
     };
 
+    // 隐藏 loading 提示层
     var hideLoading = function() {
-        top.layer.close(Base.loadingIndex);
+        top.layer.close(this.loadingIndex);
     };
 
     return {
         initNormalPage: function() {
-            initConfirmation();
             initAjaxForm();
             initImgpreview();
             initCheckAll();
             highlightSidebar();
         },
         initDialogPage: function() {
-            initConfirmation();
             initAjaxForm();
             initCheckAll();
         },
-        initConfirmation: initConfirmation,
         success: success,
         error: error,
         info: info,
-        confirm: confirm
+        confirm: confirm,
+        showLoading: showLoading,
+        hideLoading: hideLoading
     }
 }();
 
