@@ -6,10 +6,10 @@
     <div class="box-header with-border">
       <div class="box-title"><span class="fa fa-list"></span>自定义菜单</div>
       <div class="box-tools pull-right">
-        <a href="{{ user_url('menu/create') }}" class="btn btn-primary btn-xs dialog-popup dialog-medium"><i class="fa fa-plus"></i>添加菜单</a>
-        <a href="javascript:;" id="sync-from-wechat" class="btn btn-primary btn-xs"><i class="fa fa-cloud-download"></i>从微信同步</a>
-        <a href="javascript:;" id="sync-to-wechat" class="btn btn-primary btn-xs"><i class="fa fa-cloud-upload"></i>同步到微信</a>
-        <a href="javascript:;" class="btn btn-danger btn-xs" id="clear-all"><i class="fa fa-trash-o"></i>清除菜单</a>
+        <a href="{{ user_url('menu/create') }}" class="btn default green-stripe btn-xs dialog-popup dialog-medium"><i class="fa fa-plus"></i>添加菜单</a>
+        <a href="javascript:;" id="sync-from-wechat" class="btn default green-stripe btn-xs"><i class="fa fa-cloud-download"></i>从微信同步</a>
+        <a href="javascript:;" id="sync-to-wechat" class="btn default green-stripe btn-xs"><i class="fa fa-cloud-upload"></i>同步到微信</a>
+        <a href="javascript:;" class="btn default red-stripe btn-xs" id="clear-all"><i class="fa fa-trash-o"></i>清除菜单</a>
       </div>
     </div>
     <div class="box-body table-responsive no-padding">
