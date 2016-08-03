@@ -2,8 +2,8 @@
 @section('main')
   <div class="row">
     <div class="col-md-12">
-      <div class="portlet light">
-        <div class="portlet-title tabbable-line">
+      <div class="box box-default">
+        <div class="box-header with-border tabbable-line">
           <div class="caption caption-md">
             <i class="icon-globe theme-font hide"></i>
             <span class="caption-subject font-blue-madison bold uppercase">修改密码</span>
@@ -20,7 +20,7 @@
             </li>
           </ul>
         </div>
-        <div class="portlet-body form">
+        <div class="box-body form">
           <form action="" method="post" class="form-horizontal" role="form">
             <div class="form-body">
               <div class="form-group">

@@ -2,15 +2,15 @@
 @section('style')
 @stop
 @section('main')
-  <div class="portlet light">
-    <div class="portlet-title">
+  <div class="box box-default">
+    <div class="box-header with-border">
       <div class="caption">
         <i class="fa fa-list"></i> 文本群发
       </div>
-      <div class="actions">
+      <div class="box-tools pull-right">
       </div>
     </div>
-    <div class="portlet-body">
+    <div class="box-body">
       <div class="table-scrollable">
 
       </div>

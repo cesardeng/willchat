@@ -1,12 +1,12 @@
 @extends('user.layouts.base')
 @section('main')
-  <div class="portlet light">
-    <div class="portlet-title">
+  <div class="box box-default">
+    <div class="box-header with-border">
       <div class="caption">
         <i class="fa fa-info"></i> 商家信息设置
       </div>
     </div>
-    <div class="portlet-body form">
+    <div class="box-body form">
       <form class="form-horizontal validate" role="form" method="post" action="__SELF__">
         <div class="form-body">
           <div class="form-group">

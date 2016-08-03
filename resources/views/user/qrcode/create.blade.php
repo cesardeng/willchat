@@ -1,14 +1,14 @@
 @extends('user.layouts.base')
 @section('main')
-  <div class="portlet light">
-    <div class="portlet-title">
+  <div class="box box-default">
+    <div class="box-header with-border">
       <div class="caption">
         <i class="fa fa-qrcode"></i> 创建二维码
       </div>
-      <div class="actions">
+      <div class="box-tools pull-right">
       </div>
     </div>
-    <div class="portlet-body form">
+    <div class="box-body form">
       <form action="" method="post" class="form-horizontal" role="form">
         {!! csrf_field() !!}
         <div class="form-body">

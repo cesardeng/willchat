@@ -7,8 +7,8 @@
 @section('main')
   <div class="row">
     <div class="col-md-12">
-      <div class="portlet light">
-        <div class="portlet-title tabbable-line">
+      <div class="box box-default">
+        <div class="box-header with-border tabbable-line">
           <div class="caption caption-md">
             <i class="icon-globe theme-font hide"></i>
             <span class="caption-subject font-blue-madison bold uppercase">头像设置</span>
@@ -25,7 +25,7 @@
             </li>
           </ul>
         </div>
-        <div class="portlet-body">
+        <div class="box-body">
           <div class="tab-content">
             <div class="avatar-body">
               <div class="avatar-upload">

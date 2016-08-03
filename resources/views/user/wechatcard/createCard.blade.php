@@ -5,13 +5,13 @@
         href="{{ vendor('metronic/global/plugins/bootstrap-daterangepicker/daterangepicker-bs3.css') }}"/>
 @stop
 @section('main')
-  <div class="portlet light">
-    <div class="portlet-title">
+  <div class="box box-default">
+    <div class="box-header with-border">
       <div class="caption">
         <i class="fa fa-credit-card "></i> 创建卡券
       </div>
     </div>
-    <div class="portlet-body form">
+    <div class="box-body form">
       <div class="note note-info">
         <h4 class="block">温馨提示：</h4>
         使用些功能，商户必须开通微信卡券功能，如未开通，请在公众平台进行申请。<br/>

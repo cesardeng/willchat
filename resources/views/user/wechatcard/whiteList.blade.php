@@ -1,12 +1,12 @@
 @extends('user.layouts.base')
 @section('main')
-  <div class="portlet light">
-    <div class="portlet-title">
+  <div class="box box-default">
+    <div class="box-header with-border">
       <div class="caption">
         <i class="fa fa-info"></i> 测试白名单设置
       </div>
     </div>
-    <div class="portlet-body form">
+    <div class="box-body form">
       <div class="note note-info">
         <h4 class="block">温馨提示：</h4>
         白名单中的微信用户可领取尚未通过审核的卡券，方便卡券商家预览卡券效果及进行测试。<br/>

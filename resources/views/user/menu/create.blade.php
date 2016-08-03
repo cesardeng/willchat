@@ -51,7 +51,7 @@
       </div>
       <div class="form-actions">
         <button type="submit" class="btn green">保存</button>
-        <button type="button" class="btn red btn-closedialog">取消</button>
+        <button type="button" class="btn btn-danger btn-closedialog">取消</button>
       </div>
     </form>
   </div>
